@@ -5,12 +5,12 @@ function About() {
 			<p className='mb-4 text-xl font-light'>
 				This is a React.js App to search GitHub profiles and view profile details. The app is similar to the version 1
 				built in 2020{' '}
-				<a href='https://github.com/oluwasheeun/github-User-Finder/' target='_blank'>
+				<a href='https://github.com/oluwasheeun/github-User-Finder/' target='_blank' rel='noreferrer'>
 					{' '}
 					[here]
 				</a>{' '}
 				and is part of <a href='https://traversymedia.com'> Brad Traversy</a>{' '}
-				<a href='https://www.udemy.com/course/react-front-to-back-2022/' target='_blank'>
+				<a href='https://www.udemy.com/course/react-front-to-back-2022/' target='_blank' rel='noreferrer'>
 					{' '}
 					"React Front To Back 2022"
 				</a>{' '}

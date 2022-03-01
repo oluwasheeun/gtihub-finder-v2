@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Spinner from '../shared/Spinner'
 
 function UserSearchResults() {
 	const [ users, setUsers ] = useState([])
@@ -9,11 +10,7 @@ function UserSearchResults() {
 	}, [])
 
 	const fetchUsers = async () => {
-		const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`, {
-			headers: {
-				Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-			}
-		})
+		const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users`)
 
 		const data = await response.json()
 
@@ -28,7 +25,7 @@ function UserSearchResults() {
 			</div>
 		)
 	} else {
-		return <h3>Loading....</h3>
+		return <Spinner />
 	}
 }
 
