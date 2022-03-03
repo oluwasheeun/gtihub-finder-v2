@@ -1,5 +1,7 @@
 # Github Finder v2 App
 
+** Link to deployed page - https://gtihub-finder-v2.vercel.app
+
 This is a React.js App to search GitHub profiles and view profile details. The app is similar to the version 1 built in 2020 [here](https://github.com/oluwasheeun/github-User-Finder) and is part of [Brad Traversy](https://traversymedia.com) "React Front To Back 2022" udemy course.
 
 TailwindCSS & DaisyUI were used to get the beautiful modern UI.
