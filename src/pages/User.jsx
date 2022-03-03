@@ -2,15 +2,17 @@ import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import { useEffect, useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Spinner from '../components/shared/Spinner'
+import RepoList from '../components/repos/RepoList'
 import GithubContext from '../context/github/GithubContext'
 
 function User() {
-	const { getUser, user, loading } = useContext(GithubContext)
+	const { getUser, user, loading, getUserRepos, repos } = useContext(GithubContext)
 
 	const params = useParams()
 
 	useEffect(() => {
 		getUser(params.login)
+		getUserRepos(params.login)
 	}, [])
 
 	const {
@@ -50,8 +52,10 @@ function User() {
 								<img src={avatar_url} alt='' />
 							</figure>
 							<div className='card-body justify-end'>
-								<h2 className='card-title mb-0'>{name}</h2>
-								<p>{login}</p>
+								<div>
+									<h2 className='card-title mb-0'>{name}</h2>
+									<p>{login}</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -81,7 +85,11 @@ function User() {
 							{blog && (
 								<div className='stat'>
 									<div className='stat-title text-md'>Website</div>
-									<div className='text-lg stat-value' />
+									<div className='text-lg stat-value'>
+										<a href={`https://${blog}`} target='_blank' rel='noreferrer'>
+											{blog}
+										</a>
+									</div>
 								</div>
 							)}
 							{twitter_username && (
@@ -133,6 +141,8 @@ function User() {
 						</div>
 					</div>
 				</div>
+
+				<RepoList repos={repos} />
 			</div>
 		</div>
 	)
