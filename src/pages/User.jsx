@@ -53,8 +53,7 @@ function User() {
 							</figure>
 							<div className='card-body justify-end'>
 								<div>
-									<h2 className='card-title mb-0'>{name}</h2>
-									<p>{login}</p>
+									<p className='font-mono text-sm card-title mb-0'>{login}</p>
 								</div>
 							</div>
 						</div>
